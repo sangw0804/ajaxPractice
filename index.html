@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>AJAX Practice</title>
+</head>
+<body>
+    <img src="" alt="doggy">
+    <button>ajax button</button>
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script>
+        //js로 구현
+
+        function startAjax() {
+            var xhr = new XMLHttpRequest();
+            xhr.open("GET", "https://dog.ceo/api/breeds/image/random");
+            xhr.onreadystatechange = function () {
+                if(this.readyState === 4 && this.status === 200) {
+                    var result = JSON.parse(this.responseText);
+                    document.querySelector("img[alt='doggy']").setAttribute("src", result.message);
+                }
+            }
+            xhr.send();
+        }
+        document.querySelector("button").addEventListener("click", startAjax);
+
+
+        //jquery로 구현
+
+        $("button").click(function () {
+            $.ajax({
+                url: "https://dog.ceo/api/breeds/image/random",
+                dataType: 'json',
+                success: function (data) {
+                    $("img[alt='doggy']").attr("src", data.message);
+                }
+            });
+        });
+
+    </script>
+</body>
+</html>
