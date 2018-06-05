@@ -3,7 +3,7 @@ AJAX 자바스크립트/제이쿼리
 
 1. AJAX : 비동기적 자바스크립트 & XML. 웹 브라우저와 웹 서버거 비동기적으로 데어터 통신을 하는 행위를 의미한다. 현재는 XML보다는 JSON이 더 선호되는 데이터 형식이라고...
 
-* * *
+
 
 2. javascript 이용
 
@@ -25,7 +25,7 @@ onreadystatechange 는 readyState 속성(0: request not initialized, 1: server c
 responseText 속성은 서버에서 받아온 데이터를 텍스트 형식으로 리턴해준다.
 마지막에 .send()메소드를 실행 하지 않으면 요청이 서버로 전달되지 않으니 주의!
 
-* * *
+
 
 3. jquery 이용
 
