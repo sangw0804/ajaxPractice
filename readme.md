@@ -7,7 +7,7 @@ AJAX 자바스크립트/제이쿼리
 
 2. javascript 이용
 
-/₩
+```
     function startAjax() {
         var xhr = new XMLHttpRequest();
         xhr.open("GET", "https://dog.ceo/api/breeds/image/random");
@@ -20,7 +20,7 @@ AJAX 자바스크립트/제이쿼리
         xhr.send();
     }
     document.querySelector("button").addEventListener("click", startAjax);
-/₩
+```
 
 XMLHttpRequest 객체는 이름과는 달리 xml뿐만 아니라 다른 형식의 데이터도 비동기적으로 처리할 때 사용할수 있는 객체이다.
 onreadystatechange 는 readyState 속성(0: request not initialized, 1: server connection established, 2: request received ,3: processing request ,4: request finished and response is ready) 이 바뀔 때마다 실행되는 콜백 함수를 할당해주면 된다.
@@ -31,7 +31,7 @@ responseText 속성은 서버에서 받아온 데이터를 텍스트 형식으�
 
 3. jquery 이용
 
-/₩
+```
     $("button").click(function () {
         $.ajax({
             url: "https://dog.ceo/api/breeds/image/random",
@@ -41,7 +41,7 @@ responseText 속성은 서버에서 받아온 데이터를 텍스트 형식으�
             }
         });
     });
-/₩
+```
 
 $.ajax() 메소드는 제이쿼리로 ajax통신을 실행하는 가장 기본이 되는 메소드. 유일한 인자로 객체를 받으며 객체의 키:값 을 통해 여러 옵션들을 설정해줄 수 있다.
 type: 은 해당 요청의 타입을 알려주며 명시하지 않으면 GET방식이 default이다.
